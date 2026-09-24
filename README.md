@@ -12,7 +12,7 @@
 .\scripts\Setup-DotNet.ps1
 .\.tools\dotnet\dotnet.exe restore .\CodexQuotaWidget.slnx
 .\.tools\dotnet\dotnet.exe test .\CodexQuotaWidget.slnx --no-restore
-.\.tools\dotnet\dotnet.exe restore .\src\CodexQuotaWidget.App\CodexQuotaWidget.App.csproj --runtime win-x64
+.\.tools\dotnet\dotnet.exe restore .\src\CodexQuotaWidget.App\CodexQuotaWidget.App.csproj --runtime win-x64 -p:SelfContained=true
 .\scripts\Build-Share.ps1
 ```
 
