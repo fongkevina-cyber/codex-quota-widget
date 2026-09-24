@@ -1,0 +1,40 @@
+<UserControl x:Class="CodexQuotaWidget.App.TaskbarCapsuleHostView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:modules="clr-namespace:CodexQuotaWidget.App.Modules"
+             xmlns:automation="clr-namespace:System.Windows.Automation;assembly=PresentationCore"
+             UseLayoutRounding="True"
+             SnapsToDevicePixels="True"
+             Cursor="Hand"
+             Focusable="False"
+             Foreground="{DynamicResource ReadoutTextBrush}"
+             MouseLeftButtonUp="Readout_MouseLeftButtonUp"
+             automation:AutomationProperties.Name="{Binding WeeklyRemainingAutomationText}"
+             automation:AutomationProperties.HelpText="{Binding StatusText}">
+    <!-- Alpha 1 keeps the entire layered-window area hit-testable; alpha 0 passes
+         native pointer input through the gaps between glyphs. No visible plate. -->
+    <Grid Background="#01000000" ClipToBounds="True">
+        <Grid.ToolTip>
+            <StackPanel>
+                <TextBlock Text="{Binding StatusText}" />
+                <TextBlock Text="{Binding WeeklyResetText}" />
+                <TextBlock Text="{Binding StatusToolTip}" />
+            </StackPanel>
+        </Grid.ToolTip>
+        <StackPanel Margin="8,0" VerticalAlignment="Center">
+            <TextBlock x:Name="Caption" Text="GPT剩余额度"
+                       HorizontalAlignment="Center"
+                       FontFamily="Microsoft YaHei UI, Segoe UI"
+                       FontSize="9" FontWeight="Normal" Opacity="0.75"
+                       Foreground="{DynamicResource ReadoutTextBrush}"
+                       TextWrapping="NoWrap" TextTrimming="None" />
+            <TextBlock x:Name="Percentage" HorizontalAlignment="Center"
+                   FontFamily="Microsoft YaHei UI, Segoe UI"
+                   FontSize="13"
+                   FontWeight="SemiBold"
+                   TextWrapping="NoWrap" TextTrimming="None"
+                   Foreground="{DynamicResource ReadoutTextBrush}"
+                   Text="{Binding WeeklyRemainingText}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

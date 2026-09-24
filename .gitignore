@@ -1,0 +1,34 @@
+.tools/
+.vs/
+.idea/
+artifacts/
+**/bin/
+**/obj/
+**/runtime/codex.exe
+*.user
+*.suo
+*.log
+
+# Machine-local collaboration records, credentials, and test output are not source.
+.collab/
+.codex/
+.agents/
+.env
+.env.*
+!.env.example
+**/auth.json
+**/credentials.json
+**/settings.json
+**/TestResults/
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Project-local collaboration: private executor data and recoverable snapshots.
+.collab/runtime/
+.collab/baselines/
+.collab/tasks/**/state.json
+.collab/tasks/**/state.json.tmp
+.collab/tasks/**/attempt-*.jsonl
+.collab/tasks/**/session-metadata.json
